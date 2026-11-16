@@ -1,0 +1,11 @@
+{
+  "name": "CareBridge",
+  "short_name": "CareBridge",
+  "description": "CareBridge helps older adults with care, learning, community and safety support.",
+  "start_url": "./CareBridge.html",
+  "display": "standalone",
+  "background_color": "#f3f7f6",
+  "theme_color": "#0e6a70",
+  "orientation": "portrait",
+  "lang": "en"
+}
