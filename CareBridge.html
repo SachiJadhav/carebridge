@@ -1,0 +1,175 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>CareBridge</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#f3f7f6;--card:#fff;--ink:#14323a;--mute:#4b6a70;--line:#c6d9d7;--btn:#0e6a70;--sun:#f2b632;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1e22;--card:#183036;--ink:#eaf4f3;--mute:#a9c5c7;--line:#2f4d53;--btn:#1b8a91}}
+html{font-size:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;font-size:1.15rem;line-height:1.5}
+#wrap{max-width:480px;margin:0 auto;min-height:100vh;transition:filter .2s}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:.5rem;padding:.6rem;background:var(--bg);border-bottom:2px solid var(--line)}
+header button{flex:1;font:inherit;font-weight:700;padding:.7rem .4rem;border-radius:.8rem;border:2px solid var(--btn);background:var(--btn);color:#fff;min-height:3.2rem;cursor:pointer}
+header button.alt{background:var(--card);color:var(--ink)}
+header button:disabled{opacity:.45}
+main{padding:1rem}
+h1{font-size:1.7rem;line-height:1.2;margin:.2rem 0 1rem}
+h2{font-size:1.25rem;margin:1.3rem 0 .5rem}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.tile{font:inherit;color:#fff;border:0;border-radius:1.4rem;padding:1.2rem .8rem;min-height:11rem;display:flex;flex-direction:column;justify-content:space-between;text-align:left;font-size:1.35rem;font-weight:700;cursor:pointer}
+.tile span{font-size:3rem;line-height:1}
+.t0{background:#0e6a70}.t1{background:#3d4aa0}.t2{background:#8c3b6e}.t3{background:#a65a12}
+.menu{display:flex;flex-direction:column;gap:.7rem}
+.row{font:inherit;display:flex;align-items:center;gap:.8rem;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:1rem;padding:1rem;font-weight:700;cursor:pointer;text-decoration:none;box-sizing:border-box}
+.row small{display:block;font-weight:400;color:var(--mute)}
+.row .ar{margin-left:auto;font-size:1.4rem}
+.card{background:var(--card);border:2px solid var(--line);border-radius:1rem;padding:1rem;margin:.7rem 0}
+.card b{display:block;font-size:1.2rem}
+.muted{color:var(--mute);font-size:.95rem}
+.vid{display:flex;gap:.8rem;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:1rem;padding:.7rem;margin:.6rem 0;text-decoration:none;color:var(--ink)}
+.play{flex:none;width:4.4rem;height:4.4rem;border-radius:1rem;background:#c0392b;color:#fff;display:grid;place-items:center;font-size:1.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0}
+.chip{font:inherit;font-size:1rem;padding:.5rem .9rem;border-radius:2rem;border:2px solid var(--btn);background:var(--card);color:var(--ink);cursor:pointer}
+.chip.on{background:var(--btn);color:#fff}
+input[type=text],input[type=email],select{font:inherit;width:100%;box-sizing:border-box;padding:.8rem;border-radius:.8rem;border:2px solid var(--line);background:var(--card);color:var(--ink);margin:.3rem 0 .7rem}
+.go{font:inherit;font-weight:700;background:var(--sun);color:#1b1b1b;border:0;border-radius:.9rem;padding:.9rem 1.2rem;min-height:3.2rem;cursor:pointer;width:100%}
+.sm{font:inherit;font-size:1rem;font-weight:700;background:var(--btn);color:#fff;border:0;border-radius:.7rem;padding:.55rem .9rem;margin-top:.5rem;cursor:pointer}
+.err{color:#b3261e;font-weight:700}
+a.lnk{color:var(--btn);font-weight:700}
+.set label{display:block;font-weight:700;margin-top:1.2rem}
+input[type=range]{width:100%;height:2.2rem}
+.sw{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.sw input{width:2rem;height:2rem}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+:root{--bg:#e6f2f0;--card:rgba(255,255,255,.66);--glass:rgba(255,255,255,.55);--ink:#0f2f39;--mute:#3f6269;--line:rgba(255,255,255,.75);--btn:#0e6a70;--scene:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 800' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23a9dcd8'/%3E%3Cstop offset='.5' stop-color='%23fde7cc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='800' fill='url(%23g)'/%3E%3Ccircle cx='300' cy='150' r='70' fill='%23ffd48a' opacity='.85'/%3E%3Cpath d='M0 470Q120 380 240 450T400 420V800H0Z' fill='%238fcdbf'/%3E%3Cpath d='M0 570Q150 480 300 560T400 530V800H0Z' fill='%2361b3a8'/%3E%3Cpath d='M0 680Q130 610 260 670T400 650V800H0Z' fill='%233d9390'/%3E%3C/svg%3E")}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1a1e;--card:rgba(22,46,52,.62);--glass:rgba(18,40,46,.6);--ink:#eaf4f3;--mute:#a9c5c7;--line:rgba(255,255,255,.14);--btn:#1b8a91}body::before{content:"";position:fixed;inset:0;background:rgba(5,15,19,.68);z-index:-1}}
+body{background:var(--bg) var(--scene) center top/cover fixed no-repeat}
+header{margin:.5rem;padding:.5rem;border:1px solid var(--line);border-radius:1.5rem;background:var(--glass);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);box-shadow:0 10px 30px rgba(10,60,70,.18)}
+header button{border:0;border-radius:1.1rem;background:var(--btn);box-shadow:0 3px 8px rgba(0,0,0,.15)}header button.alt{background:rgba(255,255,255,.55);color:var(--ink)}
+.hero{padding:.4rem .4rem 1.2rem}.hero h1{font-size:2.4rem;margin:0;letter-spacing:-.02em}.hero p{margin:.3rem 0 0;color:var(--mute);font-size:1.15rem}
+.tiles{gap:1rem}.tile{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.55);border-radius:1.8rem;backdrop-filter:blur(16px) saturate(170%);-webkit-backdrop-filter:blur(16px) saturate(170%);box-shadow:0 14px 34px rgba(10,50,60,.28),inset 0 1px 0 rgba(255,255,255,.5);text-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .15s}.tile:active{transform:scale(.97)}
+.tile::after{content:"";position:absolute;right:-30%;top:-30%;width:70%;height:70%;border-radius:50%;background:rgba(255,255,255,.22)}
+.tile span{width:4rem;height:4rem;display:grid;place-items:center;font-size:2.2rem;border-radius:1.3rem;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.45);text-shadow:none}
+.t0{background:linear-gradient(150deg,rgba(10,95,102,.9),rgba(40,160,160,.65))}.t1{background:linear-gradient(150deg,rgba(52,62,160,.9),rgba(110,120,220,.62))}.t2{background:linear-gradient(150deg,rgba(135,45,105,.9),rgba(205,100,160,.62))}.t3{background:linear-gradient(150deg,rgba(160,80,10,.92),rgba(235,150,50,.65))}
+.row,.card,.vid{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:1.3rem;box-shadow:0 8px 24px rgba(10,60,70,.12)}
+.row span:first-child{font-size:1.8rem}.chip{background:var(--card);border:1px solid var(--line);backdrop-filter:blur(10px)}.chip.on{background:var(--btn)}
+input[type=text],input[type=email],select{background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:1rem}
+.go{border-radius:1.1rem;background:linear-gradient(135deg,#f6c445,#f29b30);box-shadow:0 6px 16px rgba(240,150,40,.4)}
+#ab{line-height:1.75}#ab h2{margin:1.2rem 0 .3rem}#ab li{margin:.3rem 0}
+html{background:var(--bg);-webkit-text-size-adjust:100%;overflow-x:hidden}body{background:none;overflow-x:hidden;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+body::after{content:"";position:fixed;inset:0;z-index:-2;background:var(--scene) center/cover no-repeat}
+button,a.row,a.vid,select,input{min-height:3rem}.row,.vid,.chip{overflow-wrap:anywhere}
+@media(max-width:360px){.tile{min-height:9.5rem;font-size:1.15rem}h1{font-size:1.5rem}}
+</style></head><body><div id="wrap"><header id="hd"></header><main id="mn"></main></div>
+<script>
+const $=s=>document.querySelector(s),e=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hs=s=>[...s].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+const K="Home|Back|Settings|Care|Learning|Entertainment|Community|Font size|Brightness|Notifications|Language|Affordable Insurance|Exercise/Stretches|Errand Help|Care Takers|Safety Tips|New Technologies|Recipes|Financial Literacy|Crochet|Book Clubs|Easy Crafts|Show Recommendations|Meditations|News|Rides and Carpool|Events|Companionship|Search|Enter your city or ZIP code".split("|");
+const RAW={es:"Inicio|Atrás|Ajustes|Cuidado|Aprendizaje|Entretenimiento|Comunidad|Tamaño de letra|Brillo|Notificaciones|Idioma|Seguro económico|Ejercicios y estiramientos|Ayuda con mandados|Cuidadores|Consejos de seguridad|Nuevas tecnologías|Recetas|Educación financiera|Crochet|Clubes de lectura|Manualidades fáciles|Recomendaciones de series|Meditaciones|Noticias|Viajes compartidos|Eventos|Compañía|Buscar|Ingrese su ciudad o código postal",
+fr:"Accueil|Retour|Réglages|Soins|Apprentissage|Divertissement|Communauté|Taille du texte|Luminosité|Notifications|Langue|Assurance abordable|Exercices et étirements|Aide aux courses|Aides à domicile|Conseils de sécurité|Nouvelles technologies|Recettes|Éducation financière|Crochet|Clubs de lecture|Bricolage facile|Idées de séries|Méditations|Actualités|Trajets partagés|Événements|Compagnie|Rechercher|Entrez votre ville ou code postal",
+zh:"首页|返回|设置|护理|学习|娱乐|社区|字体大小|亮度|通知|语言|实惠保险|锻炼与拉伸|代办跑腿|护理人员|安全提示|新技术|食谱|理财知识|钩针编织|读书会|简易手工|节目推荐|冥想|新闻|拼车出行|活动|陪伴|搜索|输入城市或邮编",
+hi:"होम|वापस|सेटिंग्स|देखभाल|सीखना|मनोरंजन|समुदाय|अक्षर का आकार|चमक|सूचनाएँ|भाषा|किफायती बीमा|व्यायाम और स्ट्रेचिंग|काम में मदद|देखभालकर्ता|सुरक्षा सुझाव|नई तकनीकें|रेसिपी|वित्तीय साक्षरता|क्रोशिया|बुक क्लब|आसान शिल्प|शो सुझाव|ध्यान|समाचार|राइड और कारपूल|कार्यक्रम|साथ|खोजें|शहर या ज़िप कोड दर्ज करें"};
+const LN={en:"English",es:"Español",fr:"Français",zh:"中文",hi:"हिन्दी",ar:"العربية",pt:"Português",bn:"বাংলা",ru:"Русский",ja:"日本語",de:"Deutsch",ko:"한국어",it:"Italiano",vi:"Tiếng Việt",tl:"Filipino"};
+const S={p:"home",h:[],lang:"en",fs:110,br:100,n:{"Medication reminders":1,"Local news":0,"Event alerts":1},f:"All",ints:[]};
+const t=s=>{if(S.lang==="en"||!RAW[S.lang])return s;const i=K.indexOf(s);return i<0?s:RAW[S.lang].split("|")[i]||s};
+const MENU={care:["Affordable Insurance","Exercise/Stretches","Errand Help","Care Takers","Safety Tips"],learning:["New Technologies","Recipes","Financial Literacy"],ent:["Crochet","Book Clubs","Easy Crafts","Show Recommendations","Meditations"],comm:["News","Rides and Carpool","Events","Companionship"]};
+const TOP=[["care","Care","💙"],["learning","Learning","💡"],["ent","Entertainment","🎭"],["comm","Community","🤝"]];
+const ICON={"Affordable Insurance":"🛡️","Exercise/Stretches":"🧘","Errand Help":"🛒","Care Takers":"👩‍⚕️","Safety Tips":"⚠️","New Technologies":"📱","Recipes":"🍲","Financial Literacy":"💰","Crochet":"🧶","Book Clubs":"📚","Easy Crafts":"✂️","Show Recommendations":"📺","Meditations":"🕊️","News":"📰","Rides and Carpool":"🚗","Events":"📅","Companionship":"☕"};
+const yt=q=>"https://www.youtube.com/results?search_query="+encodeURIComponent(q+(S.lang==="en"?"":" "+LN[S.lang]));
+const EX=[["Seated neck and shoulder stretches","seated neck shoulder stretches for seniors",["Neck","Shoulders","5 min","Gentle"]],["Gentle morning stretch routine","gentle morning stretches for seniors 10 minutes",["Back","10 min","Gentle"]],["Chair exercises for strong legs","chair leg exercises for seniors",["Legs","10 min","Moderate"]],["Balance exercises to prevent falls","balance exercises seniors fall prevention",["Balance","5 min","Gentle"]],["Lower back relief stretches","lower back stretches for seniors",["Back","5 min","Gentle"]],["Seated cardio for heart health","seated cardio workout seniors 15 minutes",["Legs","15 min","Moderate"]],["Hand and wrist stretches for stiff joints","hand wrist stretches arthritis seniors",["Hands","5 min","Gentle"]],["Standing strength workout","standing strength workout for seniors",["Legs","Shoulders","15 min","Moderate"]]];
+const MED=[["5-minute calming breath","5 minute guided meditation for seniors",["5 min","Calm"]],["10-minute body scan for pain relief","10 minute body scan meditation chronic pain",["10 min","Pain"]],["20-minute sleep meditation","20 minute sleep meditation for older adults",["20 min","Sleep"]],["Morning gratitude meditation","10 minute morning gratitude meditation",["10 min","Calm"]],["Easing worry and anxiety","guided meditation anxiety seniors 5 minutes",["5 min","Calm"]]];
+const CFG={
+"Exercise/Stretches":{v:EX,c:["All","Neck","Shoulders","Back","Legs","Hands","Balance","5 min","10 min","15 min","Gentle","Moderate"]},
+"Meditations":{v:MED,c:["All","5 min","10 min","20 min","Calm","Sleep","Pain"]},
+"Safety Tips":{v:[["Fall-proofing your home","home safety tips for seniors prevent falls"],["Staying safe when you are out and about","personal safety tips for seniors in public"]],a:["Kitchen and sharp-edge safety","Carrying protection in public"]},
+"New Technologies":{a:["How to use a smartphone","What is AI?","How to use AI","How to shop online safely","What is social media?"]},
+"Recipes":{a:["Oatmeal with fruit and walnuts","Chicken and vegetable soup","Baked salmon with lemon"]},
+"Financial Literacy":{a:["What is the stock market?","How to invest: the basics","Why investing matters","Investing for long-term goals","Investing for short-term goals"]},
+"Crochet":{v:[["Crochet for absolute beginners","how to crochet for beginners"],["Easy crochet scarf (intermediate)","easy crochet scarf tutorial"]],a:["Your first crochet stitches","Choosing yarn and hooks"]},
+"Easy Crafts":{v:[["Simple paper flowers","easy paper flowers craft seniors"],["Painted rock garden stones","painted rocks craft tutorial"]],a:["Greeting cards from scraps","Making a memory jar"]},
+"Show Recommendations":{a:["Gentle comedies","Cozy mysteries","Nature and travel series"]}};
+const ART={
+"Kitchen and sharp-edge safety":"Use a cutting board on a damp towel so it cannot slide. Keep knives sharp, since dull knives slip.\n\nPad sharp table corners with soft guards, and choose kitchen tools with big, grippy handles. Keep a phone within reach while you cook.",
+"Carrying protection in public":"A personal safety alarm that clips to a bag is loud, legal in most places and needs no training. A flashlight and a charged phone with emergency contacts on speed dial also help.\n\nStay in well-lit areas, let someone know your plans, and check local rules before carrying anything else.",
+"How to use a smartphone":"Press the side button to wake the phone. Tap an icon to open an app, and swipe up to go home.\n\nTo call, open Phone, tap the keypad, type the number and press the green button. Make text bigger in Settings under Display.",
+"What is AI?":"AI, or artificial intelligence, is computer software that can read, write and answer questions in everyday language. It learns patterns from large amounts of text and images.\n\nIt can be helpful, but it can also be wrong, so double-check important facts.",
+"How to use AI":"Open an AI assistant app and type or speak a question, like “Explain my medication schedule in simple words.”\n\nAsk follow-up questions anytime. Never share passwords, bank numbers or your Social Security number.",
+"How to shop online safely":"Shop on sites that start with https and a padlock. Use a credit card, which has better fraud protection than a debit card.\n\nBe wary of deals that seem too good to be true, and never pay by gift card.",
+"What is social media?":"Social media sites such as Facebook let you share photos and messages with family and friends. You choose who sees your posts in the privacy settings.\n\nOnly accept friend requests from people you know.",
+"Oatmeal with fruit and walnuts":"Cook half a cup of oats in one cup of water for five minutes in a pot or the microwave. Top with sliced banana or berries, chopped walnuts and a dash of cinnamon.\n\nHeart-healthy, soft and ready in ten minutes.",
+"Chicken and vegetable soup":"Simmer chopped carrots, celery and onion in low-sodium broth for 15 minutes. Add cooked diced chicken and a handful of noodles, then cook 8 more minutes.\n\nA gentle, comforting one-pot meal. Season with herbs instead of extra salt.",
+"Baked salmon with lemon":"Heat the oven to 400°F. Place salmon on foil, add lemon slices and a drizzle of olive oil, and bake 12 to 15 minutes until it flakes.\n\nServe with steamed green beans or rice.",
+"What is the stock market?":"The stock market is a place where people buy and sell small pieces of companies, called shares. When a company does well, its shares can rise in value.\n\nPrices go up and down daily, so it works best as a long-term tool.",
+"How to invest: the basics":"Start with an emergency fund, then consider spreading money across many holdings, such as index funds, instead of a single company.\n\nA fee-only financial advisor can help. This is general information, not personal advice.",
+"Why investing matters":"Prices rise over time, so money sitting in a drawer buys less each year. Investing aims to help savings keep up with, or beat, rising costs.\n\nAll investing carries some risk of loss.",
+"Investing for long-term goals":"For goals more than five years away, people often use diversified funds, which can ride out ups and downs. Many keep costs low.\n\nCheck with a professional about what fits your situation.",
+"Investing for short-term goals":"For money needed within a few years, safer options like high-yield savings, CDs and Treasury bills are common, since they avoid big drops.\n\nThe tradeoff is lower growth.",
+"Your first crochet stitches":"Learn the slip knot, chain stitch and single crochet. Make a chain of 20, then work a row of single crochet back along it.\n\nA washcloth is a perfect first project.",
+"Choosing yarn and hooks":"Start with smooth, light-colored worsted yarn and a 5mm hook. Ergonomic handles ease sore hands.\n\nAvoid fuzzy or very dark yarn until you are comfortable.",
+"Greeting cards from scraps":"Fold a sheet of cardstock in half. Glue on pressed flowers, fabric scraps or magazine cut-outs, then write a message inside.\n\nUse a glue stick for less mess.",
+"Making a memory jar":"Write favorite memories on small slips of paper and drop them into a clean jar. Decorate the outside with ribbon.\n\nOpen one each week, or give it as a gift.",
+"Gentle comedies":"Try classic sitcoms and feel-good comedies like The Andy Griffith Show, Golden Girls and Last of the Summer Wine. Most are easy to follow with captions on.\n\nSearch the title on your streaming app.",
+"Cozy mysteries":"Murder, She Wrote, Miss Marple and Death in Paradise offer puzzles without graphic scenes.\n\nPerfect for an afternoon with tea.",
+"Nature and travel series":"Planet Earth and Rick Steves’ Europe let you explore the world from your chair. Calm narration and beautiful scenery.\n\nMany are free at your local library."};
+const CLUBS=["Page Turners","Tea & Tales","Mystery Lovers","Sunday Readers","Golden Pages"],GEN=[["Mystery","The Thursday Murder Club"],["Historical fiction","The Nightingale"],["Memoir","Educated"],["Classics","Pride and Prejudice"],["Light & funny","A Man Called Ove"],["Nature","Braiding Sweetgrass"]];
+const NM=["Maria G.","James T.","Priya S.","Robert L.","Linda W.","Ahmed K.","Carol B.","Daniel H."],INTS=["Gardening","Crochet","Cooking","Books","Walking","Music","Cards & games","Travel","Painting","Faith"];
+const lines=n=>n.split("\n\n").map(p=>"<p>"+p+"</p>").join("");
+const go=p=>{S.h.push(S.p);S.p=p;S.f="All";R()},back=()=>{if(S.h.length){S.p=S.h.pop();S.f="All";R()}},home=()=>{S.h=[];S.p="home";S.f="All";R()};
+const zipForm=(x="",btn="Search")=>`<label for="zip"><b>${t("Enter your city or ZIP code")}</b></label><input type="text" id="zip" inputmode="text" autocomplete="postal-code" placeholder="e.g. 95376">${x}<button class="go" data-a="run">${t(btn)}</button><div id="res"></div>`;
+const chipsH=a=>a?`<div class="chips">${a.map(c=>`<button class="chip ${c===S.f?"on":""}" data-a="chip" data-v="${c}">${c}</button>`).join("")}</div>`:"";
+const vids=(v)=>v.filter(x=>S.f==="All"||(x[2]||[]).includes(S.f)).map(x=>`<a class="vid" href="${yt(x[1])}" target="_blank" rel="noopener"><div class="play">▶</div><div><b>${x[0]}</b><div class="muted">${(x[2]||["Video"]).join(" · ")}</div></div></a>`).join("")||`<p class="muted">No videos match. Try another filter.</p>`;
+const arts=a=>a.map(x=>`<button class="row" data-a="art" data-v="${x}">📖 <span>${x}</span><span class="ar">›</span></button>`).join("");
+function page(){const p=S.p;
+if(p==="home")return `<div class="hero"><h1>CareBridge</h1><p>Your bridge to care, learning, fun and friends.</p></div><div class="tiles">${TOP.map((x,i)=>`<button class="tile t${i}" data-a="go" data-v="m:${x[0]}"><span>${x[2]}</span>${t(x[1])}</button>`).join("")}</div>`;
+if(p==="set")return `<h1>⚙️ ${t("Settings")}</h1><div class="set"><label for="fs">${t("Font size")}: <span id="fsv">${S.fs}%</span></label><input type="range" id="fs" min="90" max="160" step="10" value="${S.fs}"><label for="br">${t("Brightness")}: <span id="brv">${S.br}%</span></label><input type="range" id="br" min="50" max="110" step="5" value="${S.br}"><label>${t("Notifications")}</label>${Object.keys(S.n).map(k=>`<div class="sw"><span>${k}</span><input type="checkbox" role="switch" data-a="nt" data-v="${k}" ${S.n[k]?"checked":""}></div>`).join("")}<label for="lg">${t("Language")}</label><select id="lg">${Object.entries(LN).map(([k,v])=>`<option value="${k}" ${k===S.lang?"selected":""}>${v}</option>`).join("")}</select></div>`;
+if(p.startsWith("m:")){const k=p.slice(2),r=TOP.find(x=>x[0]===k);return `<h1>${r[2]} ${t(r[1])}</h1><div class="menu">${MENU[k].map(i=>`<button class="row" data-a="go" data-v="i:${i}"><span style="font-size:1.8rem">${ICON[i]}</span>${t(i)}<span class="ar">›</span></button>`).join("")}</div>`}
+if(p.startsWith("a:")){const k=p.slice(2);return `<h1>${k}</h1><div class="card" id="ab">${lines(ART[k])}</div><button class="go" data-a="speak" data-v="${k}">🔊 Read aloud</button>`}
+const n=p.slice(2),c=CFG[n];let h=`<h1>${ICON[n]} ${t(n)}</h1>`;
+if(c)return h+chipsH(c.c)+(c.v?"<h2>Videos</h2>"+vids(c.v):"")+(c.a?"<h2>Articles</h2>"+arts(c.a):"");
+if(n==="Affordable Insurance")return h+zipForm("","Search");
+if(n==="Errand Help")return h+zipForm(`<label for="er"><b>What errand do you need?</b></label><input type="text" id="er" placeholder="e.g. groceries, pharmacy pickup">`);
+if(n==="Rides and Carpool")return h+zipForm(`<label for="er"><b>Where do you need to go?</b></label><select id="er"><option>Shopping complex</option><option>Bank</option><option>Hospital</option><option>Community center</option><option>Pharmacy</option></select>`);
+if(n==="Companionship")return h+`<label for="em"><b>Your email</b></label><input type="email" id="em" autocomplete="email"><b>Pick your interests</b><div class="chips">${INTS.map(i=>`<button class="chip" data-a="tog" data-v="${i}">${i}</button>`).join("")}</div><button class="go" data-a="comp">Find friends</button><div id="res"></div>`;
+return h+zipForm();}
+function run(){const n=S.p.slice(2),z=e($("#zip").value.trim()),r=$("#res");
+if(z.length<3){r.innerHTML=`<p class="err">${t("Enter your city or ZIP code")}</p>`;return}
+const s=hs(z),pk=(a,i)=>a[(s+i*3)%a.length],er=$("#er")?e($("#er").value):"",g=q=>"https://www.google.com/search?q="+encodeURIComponent(q),btn=(l,d)=>`<button class="sm" data-a="req" data-d="${d}">${l}</button>`;let o="";
+if(n==="Affordable Insurance"){o=`<p class="muted">Options often offered near ${z}. Tap a name to see plans and prices in your area on Google.</p>`+[["Humana Medicare Advantage","Plans with $0 monthly premium options"],["UnitedHealthcare AARP Medicare","Large doctor network"],["Aetna Medicare","Dental and vision extras"],["Kaiser Permanente Senior Advantage","Care at one local system"],["Blue Cross Blue Shield Medigap","Supplements that cover out-of-pocket costs"],["Medicare Savings Program (your state)","Help with premiums if income is limited"]].map(x=>`<a class="row" style="margin:.6rem 0" href="${g(x[0]+" near "+z)}" target="_blank" rel="noopener"><span>${x[0]}<small>${x[1]}</small></span><span class="ar">↗</span></a>`).join("")}
+else if(n==="Errand Help")o=`<p class="muted">Sample helpers near ${z} for: <b>${er||"your errand"}</b></p>`+[0,1,2].map(i=>`<div class="card"><b>${pk(NM,i)}</b>$${12+(s+i)%7}/hour · ${1+(s+i*5)%9} miles away<div class="muted">Available ${["weekday mornings","afternoons","weekends"][(s+i)%3]}</div>${btn("Request help","Request sent ✓")}</div>`).join("");
+else if(n==="Care Takers")o=`<p class="muted">Sample caretakers near ${z}.</p>`+[0,1,2].map(i=>`<div class="card"><b>${pk(NM,i+2)}, ${["CNA","RN","Home health aide"][(s+i)%3]}</b>$${24+(s+i*7)%14}/hour · within ${3+(s+i*4)%15} miles of ${z}<div class="muted">Available: ${["Mon–Fri days","Evenings and weekends","Overnight"][(s+i)%3]}<br>Specialties: ${["dementia care","mobility help","medication reminders","meal prep"][(s+i)%4]}, ${["companionship","post-surgery care"][(s+i)%2]}</div>${btn("Request a call","Call requested ✓")}</div>`).join("");
+else if(n==="Book Clubs")o=`<p class="muted">Sample clubs within 20 miles of ${z}. <a class="lnk" href="${g("book clubs near "+z)}" target="_blank" rel="noopener">Search real clubs</a></p>`+[0,1,2].map(i=>`<div class="card"><b>${pk(CLUBS,i)}</b>${4+(s+i)%14} members · meets ${["Tuesdays","Thursdays","first Saturdays"][(s+i)%3]}, ${["10 am","2 pm"][i%2]}${btn("Ask to join","Request sent ✓")}</div>`).join("")+"<h2>Book recommendations</h2>"+GEN.map(x=>`<div class="card"><b>${x[1]}</b><span class="muted">${x[0]}</span></div>`).join("");
+else if(n==="News")o=[["📰 Local news for "+z,"https://news.google.com/search?q="+encodeURIComponent(z)],["🎥 Local news videos",yt("local news "+z)],["📄 Community reports",g("community report "+z+" city news")]].map(x=>`<a class="row" style="margin:.6rem 0" href="${x[1]}" target="_blank" rel="noopener">${x[0]}<span class="ar">↗</span></a>`).join("");
+else if(n==="Rides and Carpool")o=`<p class="muted">Sample drivers going to <b>${er}</b> from ${z}.</p>`+[0,1,2].map(i=>`<div class="card"><b>${pk(NM,i+1)}</b>Volunteer driver · ${2+(s+i)%3} seats<div class="muted">Leaves ${["9 am","11 am","1 pm","3 pm"][(s+i)%4]} on ${["Mon","Wed","Fri","Sat"][(s+i)%4]}</div>${btn("Request a ride","Ride requested ✓")}</div>`).join("");
+else if(n==="Events"){const E=["Senior walking group at the park","Coffee morning at the community center","Free blood-pressure check at the library","Beginner tablet class","Gentle chair yoga","Farmers market and live music","Potluck lunch and bingo"];o=`<p class="muted">Sample events near ${z} in the next 30 days. <a class="lnk" href="${g("senior events near "+z)}" target="_blank" rel="noopener">Search real events</a></p>`+[0,1,2,3,4].map(i=>{const d=new Date();d.setDate(d.getDate()+3+i*6+(s+i)%4);return `<div class="card"><b>${pk(E,i)}</b>${d.toLocaleDateString(S.lang,{weekday:"long",month:"long",day:"numeric"})}</div>`}).join("")}
+r.innerHTML=o}
+document.addEventListener("click",ev=>{const b=ev.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,v=b.dataset.v;
+if(a==="go")go(v);else if(a==="art")go("a:"+v);else if(a==="run")run();
+else if(a==="chip"){S.f=v;R()}
+else if(a==="tog"){b.classList.toggle("on");S.ints=[...document.querySelectorAll(".chip.on")].map(x=>x.dataset.v)}
+else if(a==="req"){b.textContent=b.dataset.d;b.disabled=true}
+else if(a==="nt")S.n[v]=b.checked?1:0;
+else if(a==="speak"){try{speechSynthesis.cancel();{const u=new SpeechSynthesisUtterance($("#ab").innerText);u.lang=S.lang;speechSynthesis.speak(u)}}catch(x){}}
+else if(a==="comp"){const m=$("#em").value;if(!/\S+@\S+\.\S+/.test(m)||!S.ints.length){$("#res").innerHTML='<p class="err">Enter a valid email and pick at least one interest.</p>';return}
+$("#res").innerHTML="<p class=muted>Sample matches:</p>"+[0,1,2].map(i=>`<div class="card"><b>${NM[(hs(m)+i)%8]}</b>Shares: ${S.ints.slice(0,2+i%2).join(", ")}<br><button class="sm" data-a="req" data-d="Hello sent ✓">Say hello</button></div>`).join("")}});
+document.addEventListener("input",ev=>{if(ev.target.id==="fs"){S.fs=+ev.target.value;$("#fsv").textContent=S.fs+"%";fx()}if(ev.target.id==="br"){S.br=+ev.target.value;$("#brv").textContent=S.br+"%";fx()}});
+document.addEventListener("change",ev=>{if(ev.target.id==="lg"){S.lang=ev.target.value;document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==="ar"?"rtl":"ltr";R()}});
+const fx=()=>{document.documentElement.style.fontSize=S.fs+"%";$("#wrap").style.filter=`brightness(${S.br/100})`};
+function R(){$("#hd").innerHTML=`<button data-a="x" id="bk" ${S.h.length?"":"disabled"}>◀ ${t("Back")}</button><button class="alt" id="hm">🏠 ${t("Home")}</button>${S.p==="home"?`<button class="alt" id="st">⚙️ ${t("Settings")}</button>`:""}`;
+$("#bk").onclick=back;$("#hm").onclick=home;if($("#st"))$("#st").onclick=()=>go("set");$("#mn").innerHTML=page();scrollTo(0,0);fx();if(S.p.startsWith("a:"))loadArt(S.p.slice(2));lang()}
+let SM=null,busy=0,again=0;const TC={},OUT=new Set(),AC={};
+if(window.claude)claude.use("sample").then(s=>{SM=s;lang();if(S.p.startsWith("a:"))loadArt(S.p.slice(2))}).catch(()=>{});
+const md=s=>{let o="",ul=0;for(const l of s.split("\n")){const m=l.match(/^\s*(?:[-*]|\d+\.)\s+(.*)/),h=l.match(/^#+\s+(.*)/);if(ul&&!m){o+="</ul>";ul=0}if(h)o+=`<h2>${e(h[1])}</h2>`;else if(m){if(!ul){o+="<ul>";ul=1}o+=`<li>${e(m[1])}</li>`}else if(l.trim())o+=`<p>${e(l)}</p>`}return o+(ul?"</ul>":"")};
+async function loadArt(k){const b=$("#ab");if(!b||!SM)return;const key=S.lang+k;b.setAttribute("data-nt","");if(AC[key]){b.innerHTML=AC[key];return}
+b.innerHTML="<p class=muted>…</p>";const cur="a:"+k;
+try{const r=await SM(`Write a detailed, accurate, easy-to-read article for older adults titled "${k}" in ${LN[S.lang]}. About 700 words. Plain words, short paragraphs, '## ' section headings, practical steps or tips, and a brief reminder to check with a doctor, financial professional or local official where relevant. Original wording, no preamble. Output only the article.`,{cache:false,onText:({text})=>{if(S.p===cur&&$("#ab"))$("#ab").innerHTML=md(text)}});AC[key]=md(r.text);if(S.p===cur&&$("#ab"))$("#ab").innerHTML=AC[key]}
+catch(x){const c=$("#ab");if(c&&S.p===cur){c.removeAttribute("data-nt");c.innerHTML=lines(ART[k]);if(x&&x.code==="not_granted")SM=null;lang()}}}
+async function lang(){if(S.lang==="en"||!SM)return;if(busy){again=1;return}busy=1;
+try{const items=[],w=document.createTreeWalker($("#wrap"),NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest("[data-nt],script,style")||!/\p{L}/u.test(n.nodeValue)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+while(w.nextNode()){const n=w.currentNode;items.push({g:()=>n.nodeValue.trim(),s:v=>{n.nodeValue=n.nodeValue.replace(n.nodeValue.trim(),v)}})}
+document.querySelectorAll("[placeholder]").forEach(i=>items.push({g:()=>i.placeholder,s:v=>{i.placeholder=v}}));
+const need=[...new Set(items.map(i=>i.g()).filter(s=>s&&!OUT.has(s)&&!TC[S.lang+"|"+s]))];
+for(let i=0;i<need.length;i+=50){const ch=need.slice(i,i+50);
+try{const r=await SM.json(`Translate each string in this JSON array into ${LN[S.lang]}. Keep emojis, numbers, ZIP codes and personal names unchanged. Return only a JSON array of the same length.\n`+JSON.stringify(ch),{modelTier:"quick"});if(Array.isArray(r)&&r.length===ch.length)ch.forEach((s,j)=>{TC[S.lang+"|"+s]=String(r[j]);OUT.add(String(r[j]))})}catch(x){if(x&&x.code==="not_granted"){SM=null;return}}}
+items.forEach(i=>{const s=i.g(),v=TC[S.lang+"|"+s];if(v&&v!==s)i.s(v)})}
+finally{busy=0;if(again){again=0;setTimeout(lang,50)}}}
+new MutationObserver(()=>{clearTimeout(window._mo);window._mo=setTimeout(lang,250)}).observe($("#mn"),{childList:true,subtree:true});
+R();
+</script></body></html>
