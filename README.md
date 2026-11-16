@@ -1,1 +1,2 @@
 CareBridge is a friendly, easy-to-use app for older adults. Find affordable insurance, caretakers, errand help and rides; follow stretch, crochet and meditation videos; learn technology, cooking and finance; and meet neighbors through local news, events, book clubs and companionship. Available in 15 languages.
+To run the program, paste the following link in a browser: https://sachijadhav.github.io/carebridge/
